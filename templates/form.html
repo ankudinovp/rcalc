@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор рольставен</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Калькулятор рольставен</h1>
+    <form method="post" action="/calculate">
+        <label>Ширина (мм): <input type="number" name="width" step="1" required></label><br><br>
+        <label>Высота (мм): <input type="number" name="height" step="1" required></label><br><br>
+        <label>Цвет: <input type="text" name="color" required></label><br><br>
+        <button type="submit">Рассчитать</button>
+    </form>
+
+    {% if area is defined %}
+        <h2>Результаты:</h2>
+        <p>Ширина: {{ width }} мм</p>
+        <p>Высота: {{ height }} мм</p>
+        <p>Цвет: {{ color }}</p>
+        <p><strong>Площадь: {{ area }} м²</strong></p>
+    {% endif %}
+</body>
+</html>
